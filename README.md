@@ -13,14 +13,21 @@ Before you begin, ensure you have the following installed:
 
 ### Setting Up Your Project Repository
 
-When you clone the SWPT, you'll need to disconnect it from the template repository and connect it to your new project repository. This process ensures your project starts with a clean Git history while maintaining all the template files. Here's how to do it:
+First, clone the SWPT repository to your local machine:
 
-1. First, navigate to your project directory in PowerShell or Command Prompt:
 ```bash
-cd "C:\Users\YourUsername\Path\To\Your\Project\SWPT"
+git clone https://github.com/Sport-Wales/sport-wales-project-template
 ```
 
-2. Remove the existing remote repository connections:
+When you clone the SWPT, you'll need to disconnect it from the template repository and connect it to your new project repository. This process ensures your project starts with a clean Git history while maintaining all the template files to start your new project. Here's how to do it:
+
+1. First, navigate to your project directory that holds your project files. In your terminal, PowerShell or Command Prompt:
+
+```bash
+cd "C:\Users\YourUsername\Path\To\Your\Project-Name\sport-wales-project-template"
+```
+
+2. Remove the existing remote repository connections by executing the following commands:
 ```bash
 # Remove remote repository references
 Remove-Item -Path ".git/refs/remotes/origin" -Recurse -Force
@@ -28,7 +35,7 @@ Remove-Item -Path ".git/logs/refs/remotes/origin" -Recurse -Force
 git remote remove origin
 ```
 
-3. Add your new repository as the origin:
+3. You now need to go to github and create a new repository for your project. Once you have done that, add your new repository as the origin:
 ```bash
 # Replace the URL with your project's repository URL
 git remote add origin https://github.com/Sport-Wales/Your-Project-Name.git
@@ -43,9 +50,9 @@ This should show your new repository URL as both fetch and push destinations.
 
 ### Creating Your Project
 
-1. Clone the template:
+1. If you havent cloned the SWPT template in to your porject folder, do so now:
 ```bash
-git clone https://github.com/sportwales/SWPT.git your-project-name
+git clone https://github.com/Sport-Wales/sport-wales-project-template
 cd your-project-name
 ```
 
@@ -59,9 +66,8 @@ cd your-project-name
      }
      ```
    - Update the title in `index.html`
-   - Remove the Git history and initialise a new repository:
+   - Initialise a new repository:
      ```bash
-     rm -rf .git
      git init
      ```
 
